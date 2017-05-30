@@ -40,6 +40,7 @@ cd gmp-6.0.0
 make -j4 && sudo make install
 
 cd ..
+
 git clone https://github.com/XpoolX/StratumRieMiner
 
 cd StratumRieMiner
