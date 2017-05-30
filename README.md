@@ -29,16 +29,25 @@ BUILDING
 PREREQUISITES 
 Ubuntu: sudo apt-get -y install build-essential m4 openssl libssl-dev git libjson0 libjson0-dev libcurl4-openssl-dev wget libjansson-dev
 
-wget http://mirrors.kernel.org/gnu/gmp/gmp-6.0.0a.tar.bz2 
-tar xjvf gmp-6.0.0a.tar.bz2 
+wget http://mirrors.kernel.org/gnu/gmp/gmp-6.0.0a.tar.bz2
+
+tar xjvf gmp-6.0.0a.tar.bz2
+
 cd gmp-6.0.0
-./configure --enable-cxx 
-make -j4 && sudo make install 
+
+./configure --enable-cxx
+
+make -j4 && sudo make install
+
 cd ..
-git clone https://github.com/gatra/fastrie.git 
-cd fastrie/xptMiner 
-LD_LIBRARY_PATH=/usr/local/lib 
-make -j4 
+git clone https://github.com/XpoolX/StratumRieMiner
+
+cd StratumRieMiner
+
+LD_LIBRARY_PATH=/usr/local/lib
+
+make -j4
+
 Optionally run:
 ./build_allme.riecoinworkername -p workerpassword
 
