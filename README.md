@@ -26,16 +26,21 @@ sudo apt-get -y install build-essential m4 openssl libssl-dev git libjson0 libjs
 BUILDING
 ========
 
-wget http://mirrors.kernel.org/gnu/gmp/gmp-5.1.3.tar.bz2
-tar xjvf gmp-5.1.3.tar.bz2
-cd gmp-5.1.3
-./configure --enable-cxx
-make -j4 && sudo make install
-cd
-git clone https://github.com/clintar/xptMiner.git
-cd xptMiner
-LD_LIBRARY_PATH=/usr/local/lib make -j4
-./xptminer -u username.riecoinworkername -p workerpassword
+PREREQUISITES 
+Ubuntu: sudo apt-get -y install build-essential m4 openssl libssl-dev git libjson0 libjson0-dev libcurl4-openssl-dev wget libjansson-dev
+
+wget http://mirrors.kernel.org/gnu/gmp/gmp-6.0.0a.tar.bz2 
+tar xjvf gmp-6.0.0a.tar.bz2 
+cd gmp-6.0.0
+./configure --enable-cxx 
+make -j4 && sudo make install 
+cd ..
+git clone https://github.com/gatra/fastrie.git 
+cd fastrie/xptMiner 
+LD_LIBRARY_PATH=/usr/local/lib 
+make -j4 
+Optionally run:
+./build_allme.riecoinworkername -p workerpassword
 
 
 if you get illegal instruction try this
